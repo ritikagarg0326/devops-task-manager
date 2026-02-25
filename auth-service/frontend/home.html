@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <h1>Welcome <span id="username"></span></h1>
+
+            <h3>Your Skills</h3>
+            <ul id="skills"></ul>
+
+            <input id="newSkill" placeholder="Add new skill">
+            <button onclick="addSkill()">Add Skill</button>
+
+            <br><br>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <script>
+        const token = localStorage.getItem("token");
+
+        if (!token) {
+            window.location.href = "/";
+        }
+
+        async function loadProfile() {
+            const res = await fetch("/profile", {
+                headers: { "Authorization": token }
+            });
+
+            if (!res.ok) {
+                window.location.href = "/";
+                return;
+            }
+
+            const data = await res.json();
+
+            document.getElementById("username").innerText = data.username;
+
+            const skillList = document.getElementById("skills");
+            skillList.innerHTML = "";
+
+            if (!data.skills || data.skills.length === 0) {
+                skillList.innerHTML = "<p>No skills added yet.</p>";
+                return;
+            }
+
+            data.skills.forEach(skill => {
+                const li = document.createElement("li");
+                li.innerText = skill;
+                skillList.appendChild(li);
+            });
+        }
+
+        async function addSkill() {
+            const skill = document.getElementById("newSkill").value;
+
+            if (!skill) return;
+
+            await fetch("/add-skill", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": token
+                },
+                body: JSON.stringify({ skill })
+            });
+
+            document.getElementById("newSkill").value = "";
+            loadProfile();
+        }
+
+        function logout() {
+            localStorage.removeItem("token");
+            window.location.href = "/";
+        }
+
+        loadProfile();
+    </script>
+
+</body>
+
+</html>
