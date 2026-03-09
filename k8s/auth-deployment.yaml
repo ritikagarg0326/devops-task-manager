@@ -17,3 +17,6 @@ spec:
         image: vero026/auth-service:latest
         ports:
         - containerPort: 4000
+        envFrom:
+        - configMapRef:
+            name: auth-config
