@@ -7,6 +7,6 @@ spec:
   selector:
     app: nginx
   ports:
-  - port: 80
-    targetPort: 80
-    nodePort: 30007
+  - port: {{ .Values.nginx.port }}
+    targetPort: {{ .Values.nginx.port }}
+    nodePort: {{ .Values.nginx.nodePort }}

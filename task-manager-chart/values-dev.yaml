@@ -1,5 +1,5 @@
 auth:
-  replicas: 2
+  replicas: 1
   image: vero026/auth-service
   tag: latest
   port: 4000

@@ -5,13 +5,13 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: taskmanager.local
+  - host: {{ .Values.ingress.host }}
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: nginx
+            name: {{ .Release.Name }}-nginx
             port:
-              number: 80
+              number: {{ .Values.nginx.port }}

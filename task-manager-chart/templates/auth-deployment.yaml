@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ .Release.Name }}-auth
 spec:
-  replicas: 2
+  replicas: {{ .Values.auth.replicas }}
   selector:
     matchLabels:
       app: auth-service
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: auth-service
-        image: vero026/auth-service:latest
+        image: "{{ .Values.auth.image }}:{{ .Values.auth.tag }}"
         
         ports:
         - containerPort: 4000

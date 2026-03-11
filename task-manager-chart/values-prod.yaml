@@ -1,17 +1,17 @@
 auth:
-  replicas: 2
+  replicas: 4
   image: vero026/auth-service
   tag: latest
   port: 4000
 
 mongo:
-  replicas: 1
+  replicas: 3
   image: mongo
   tag: latest
   port: 27017
 
 nginx:
-  replicas: 1
+  replicas: 2
   image: vero026/nginx-app
   tag: latest
   port: 80

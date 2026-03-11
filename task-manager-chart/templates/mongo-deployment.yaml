@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ .Release.Name }}-mongo
 spec:
-  replicas: 1
+  replicas: {{ .Values.mongo.replicas }}
   selector:
     matchLabels:
       app: mongo
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: mongo
-        image: mongo:latest
+        image: "{{ .Values.mongo.image }}:{{ .Values.mongo.tag }}"
         ports:
-        - containerPort: 27017
+        - containerPort: {{ .Values.mongo.port }}
