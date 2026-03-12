@@ -163,6 +163,6 @@ Rate limiting
 
 Token refresh mechanism
 
-Skill edit/delete functionality
+Skill edit/delete functionality in website
 
 Monitoring stack (Prometheus + Grafana)
