@@ -1,1 +1,0 @@
-bucket_name = "ritika-task-manager-bucket"
