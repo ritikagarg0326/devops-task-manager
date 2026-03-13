@@ -21,3 +21,9 @@ override.tf.json
 # CLI configuration files
 .terraformrc
 terraform.rc
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+crash.log
