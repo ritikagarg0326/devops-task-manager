@@ -142,11 +142,8 @@ helm install task-prod ./task-manager-chart -f values-prod.yaml
 Each environment can have different:
 
 replicas
-
 domain names
-
 resource limits
-
 environment variables
 
 🚀 DevOps Practices Demonstrated
@@ -162,17 +159,10 @@ environment variables
 🎯 Future Improvements
 
 Terraform infrastructure automation
-
 CI/CD pipeline automation
-
 Role-based access control (RBAC)
-
 Token refresh mechanism
-
 Skill edit/delete functionality in website
-
 Rate limiting
-
 GitOps deployment (ArgoCD)
-
 Monitoring stack (Prometheus + Grafana)
