@@ -18,6 +18,13 @@ DevOps Task Manager is a **multi-user web application** built with:
 - ⚙️ **Helm** – Kubernetes package management  
 - 🏗 **Infrastructure as Code Ready** – Terraform-compatible structure  
 
+
+Snapshots:-
+
+  <img src="images/snapshot1.png" width="700"/>
+  <img src="images/snapshot2.png" width="700"/>
+
+
 The application allows users to:
 
 ✔ Register securely  
@@ -28,6 +35,8 @@ The application allows users to:
 ✔ Deploy the application using Kubernetes and Helm  
 
 ---
+
+  <img src="images/architecture-diagram.png" width="700"/>
 
 # 🧩 System Architecture Diagram
 
