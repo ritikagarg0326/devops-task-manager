@@ -21,8 +21,8 @@ DevOps Task Manager is a **multi-user web application** built with:
 
 Snapshots:-
 
-  <img src="images/snapshot1.png" width="700"/>
-  <img src="images/snapshot2.png" width="700"/>
+  <img src="images/snapshot1.png" width="500"/>
+  <img src="images/snapshot2.png" width="500"/>
 
 
 The application allows users to:
@@ -36,7 +36,7 @@ The application allows users to:
 
 ---
 
-  <img src="images/architecture-diagram.png" width="700"/>
+  <img src="images/architecture-diagram.png" width="400"/>
 
 # 🧩 System Architecture Diagram
 
